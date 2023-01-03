@@ -1,0 +1,14 @@
+.image-list{
+    /* display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap; */
+    columns: 6 200px;
+    column-gap: 10px;
+    padding: 10px;
+}
+.image{
+    width: 100%;
+    margin-bottom: 10px;
+}
