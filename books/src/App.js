@@ -18,7 +18,17 @@ function App (){
     };
 
     //to edit title book
+    const handleEdit = (id,title)=> {
+        const updatedBooks = books.map((book) => {
+            if(book.id === id){
+                return {...books ,title}; //title = title: title
+            }
+
+            return book;
+        });
     
+        setBooks(updatedBooks);
+    };
 
     //to delete a book from list
     const handleDelete = (id)=> {
@@ -31,7 +41,8 @@ function App (){
 
     return(
     <div className='app'>
-        <BookList books={books} onDelete={handleDelete}/>
+        <h1>Reading List</h1>
+        <BookList books={books} onDelete={handleDelete} onEdit={handleEdit}/>
         <BookCreate onCreate={handleCreate}/>
     </div>
     );
