@@ -1,8 +1,16 @@
+// parent element does not change in DOM 
+import { Fragment } from "react";
 
 function Table ({data, config, KeyFn}){
 
   // dynamic header
   const renderedHeaders = config.map((column) => {
+
+    // to can add sorting or button .....
+    if(column.header){
+      return  <Fragment key={column.label}>{column.header()}</Fragment> ;
+    }
+
     return <th key={column.label}>{column.label}</th>
   });
 

@@ -1,15 +1,18 @@
-import Table from "../components/Table";
+// import Table from "../components/Table";
+import SortableTable from "../components/SortableTable";
 
 function TablePage() {
 
   // each obj represents a column => label for header render for cell
   const config = [
-    { label: 'Fruit', render: (fruit) => fruit.name },
+    { label: 'Fruit', render: (fruit) => fruit.name,
+      sortValue: (fruit) => fruit.name }, // th i want make sortable
     { label: 'Color' , render: (fruit) => <div className={`p-3 m-2 ${fruit.color}`} />},
-    { label: 'Score' , render: (fruit) => fruit.score},
+    { label: 'Score' , render: (fruit) => fruit.score,
+      sortValue: (fruit) => fruit.score },
   ];
 
-  //table of fruit data
+  // table of fruit data
   const data =[
     { name: 'Orange' ,color: 'bg-orange-500' ,score: '5'},
     { name: 'Apple' ,color: 'bg-red-500' ,score: '3'},
@@ -17,12 +20,12 @@ function TablePage() {
     { name: 'Lime' ,color: 'bg-green-500' ,score: '4'},
   ];
 
-  const KeyFn = (fruit) =>{
+  const KeyFn = (fruit) => {
     return fruit.name ;
   };
 
   return(
-    <Table data={data} config={config} KeyFn={KeyFn} />
+    <SortableTable data={data} config={config} KeyFn={KeyFn} />
   );
 }
 
