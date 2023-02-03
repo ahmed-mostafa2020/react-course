@@ -1,0 +1,24 @@
+button{
+  padding: 10px;
+  background-color: #fff;
+  color: black;
+  font-size: 18px;
+  font-weight: 400;
+  border-radius: 5px;
+  border: 1px solid rgb(2, 2, 116);
+  margin-bottom: 10px;
+  width: 200px ;
+  transition: all 0.3s ease-in-out;
+}
+button:hover{
+  color: #fff;
+  background-color: black;
+}
+button:not(:last-child){
+  margin-right: 15px;
+}
+
+.box{
+  display: flex;
+  justify-content: center;
+}

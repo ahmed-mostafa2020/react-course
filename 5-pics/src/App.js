@@ -6,7 +6,7 @@ import ImageList from "./components/ImageList";
 function App(){
     const [images, setImages]=useState([]);
 
-    const handleSubmit = async (term) =>{
+    const handleSubmit = async (term) => {
         const result = await searchImages(term); //run this component to get terms i search for
         // it will take sometime so we will use await
 
